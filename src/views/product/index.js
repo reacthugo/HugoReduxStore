@@ -1,14 +1,32 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import Menu from '../../components/menu';
 import DetailProduct from '../../components/detailproduct';
 
-const ProductDetail = () => (
-    <div>
-        <Menu />
-        <h1>Tela de detalhe</h1>
-        <DetailProduct />
-    </div>
-);
+import { Products } from '../../api/Products';
+
+const ProductDetail = (props) => {
+
+    const [product, setProduct] = useState({});
+
+    const carregarProduto = () => {
+        Products.getProductById(props.match.params.id).then((produt) => {
+            setProduct(produt);
+        }).catch((falha) => {
+            console.log('Falha ao carregar os dados do produto. Erro: ' + falha);
+            setProduct({});
+        })
+    };
+
+    useEffect(() => {
+        carregarProduto();
+    });
+
+    return (
+        <div>
+            <Menu />
+            <DetailProduct product={product} />
+        </div>
+    );
+};
 
 export default ProductDetail;

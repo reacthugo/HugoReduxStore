@@ -14,7 +14,7 @@ import { Products } from '../../api/Products';
 //store
 //index.js->35
 
-const ListProduct = (props) => {
+const ListProduct = () => {
     const [listProducts, setListProducts] = useState([]);
 
     const carregarApiProdutos = () => {
@@ -32,7 +32,6 @@ const ListProduct = (props) => {
 
     return (
         <div className="lista-produto">
-            {console.log(listProducts)}
             <ul>
                 {listProducts.map((item, index) => <Product key={index} item={item} />)}
             </ul>
