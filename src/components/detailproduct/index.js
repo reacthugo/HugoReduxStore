@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactImageMagnify from 'react-image-magnify';
 import './styles.css';
+import { connect } from "react-redux";
+import { addToCart } from "../../redux/actions/carrinhoAction";
 
 const DetailProduct = (props) => {
     return (
@@ -22,10 +24,12 @@ const DetailProduct = (props) => {
             <div className="fluid__instructions">
                 <h3>{props.product.name}</h3>
                 <p>{props.product.description}</p>
+                <button onClick={() => props.addToCart(props.product)}>Add to Cart</button>
             </div>
+            
             <div style={{ height: '500px' }} />
         </div>
     );
 }
 
-export default DetailProduct;
+export default connect(undefined, { addToCart })(DetailProduct);

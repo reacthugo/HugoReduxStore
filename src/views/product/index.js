@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Menu from '../../components/menu';
+import { Menu } from '../../components/menu';
 import DetailProduct from '../../components/detailproduct';
 
 import { Products } from '../../api/Products';
