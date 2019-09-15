@@ -1,7 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Exercício 04 e 05
 
+04 - Para explorar os conceitos vistos na aula 04, iremos utilizar a stack React + Redux
+para uma aplicação que possua uma listagem de produtos com a possibilidade de
+adicioná-los a um carrinho de compras. Para isso, siga os seguintes passos:
+
+05 - Dado os atributos de performance e usabilidade vistos na aula 05, iremos utilizar
+o conjunto React.lazy + React.Suspense para melhorar a experiência de
+navegação da nossa aplicação desenvolvida no exercício 04.
+
+Pós graduação
+
+Curso: Desenvolvimento Web Full Stack
+
+Disciplina: Frameworks front end: React (FFR)
+
+Professor: Samuel Martins
+
+Aluno: Hugo Vinicius Reis Vaz
 
 [Projeto Publicado](https://reduxstore.herokuapp.com/)
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 
 ## Available Scripts
