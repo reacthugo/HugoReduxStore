@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { Menu } from '../../components/menu';
 import DetailProduct from '../../components/detailproduct';
+import { ErrorLoading } from '../../components/errorLoading';
 
 import { Products } from '../../api/Products';
 
@@ -23,8 +24,12 @@ const ProductDetail = (props) => {
 
     return (
         <div>
-            <Menu />
-            <DetailProduct product={product} />
+            <ErrorLoading>
+                <Suspense fallback={<h1>Loading...</h1>}>
+                    <Menu />
+                    <DetailProduct product={product} />
+                </Suspense>
+            </ErrorLoading>
         </div>
     );
 };

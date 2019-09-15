@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { connect } from "react-redux";
 import { removeFromCart } from "../../redux/actions/carrinhoAction";
 import { Menu } from '../../components/menu';
-import ProductCartItem from '../../components/productCartItem';
+import { LoadingProduct } from "../../components/loadingProduct";
 import './styles.css';
+
+const ProductCartItem = lazy(() => import("../../components/productCartItem"));
 
 const Cart = (props) => (
     <div >
         <Menu />
         <div className="cart">
             <ul>
-                {props.products.map(product => (
-                    <ProductCartItem key={product.id} product={product} onRemove={props.removeFromCart} />
-                ))}
+                <Suspense fallback={<LoadingProduct />}>
+                    {props.products.map(product => (
+                        <ProductCartItem key={product.id} product={product} onRemove={props.removeFromCart} />
+                    ))}
+                </Suspense>
             </ul>
 
             <p className="totalizer">
