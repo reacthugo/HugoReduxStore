@@ -7,9 +7,8 @@ const ProductCartItem = ({ product, onRemove }) => (
             src={require(`../../assets/imagens/${product.image}`)}
             alt=""
         />
-        <h4>{product.name}</h4>
-        <p>{product.price}</p>
-
+        <p><strong>Product: </strong>{product.name}</p>
+        <p><strong>Price: </strong>{product.price}</p>
         <button onClick={() => onRemove(product)}>Remove</button>
     </li>
 );

@@ -1,0 +1,47 @@
+.cart {
+  margin-top: 15px;
+  width: 90% auto;
+}
+
+.cart li img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart li {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.cart button {
+  min-width: 150px;
+  max-width: 150px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0;
+  background: #f51717;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+
+.cart .totalizer{
+    background: #ededed;
+    font-size: 1.6rem;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.cart button:hover {
+  opacity: 0.7;
+}
